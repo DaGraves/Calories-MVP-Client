@@ -1,0 +1,29 @@
+
+.registration-container
+{
+    background:url(../images/register.jpeg);
+    height: 100vh;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (max-width: 991px)
+{
+.registration-title
+{
+    margin-top: 200px;
+}
+}
+
+@media (min-width: 991px)
+{
+.registration-title
+{
+    margin-top: 300px;
+}
+}

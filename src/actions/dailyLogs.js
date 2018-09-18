@@ -19,14 +19,14 @@ export const addDay = (day) => ({
     meal1: day.meal1,
     meal2: day.meal2,
     meal3: day.meal3,
-    snack: day.snack,
+    snack: day.meal4
 });
 
 export const removeDay = (id) => (dispatch, getState) => {
     dispatch(deleteDay);
     const authToken = getState().auth.authToken;
     return (
-        fetch(`${API_BASE_URL}/dailylogs/${id}`, {
+        fetch(`${API_BASE_URL}dailylogs/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -69,7 +69,7 @@ export const saveDay = (day) => (dispatch, getState) => {
     dispatch(addDay(day));
     const authToken = getState().auth.authToken;
     return (
-        fetch(`${API_BASE_URL}/dailylogs`, {
+        fetch(`${API_BASE_URL}/dailylogs/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

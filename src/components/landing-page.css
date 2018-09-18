@@ -1,0 +1,43 @@
+
+
+
+
+.welcome 
+{
+    color: whitesmoke;
+}
+
+@media (max-width: 991px)
+{
+    .container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.headline
+{
+    display: flex;
+    color: whitesmoke;
+    margin-top: 100px;
+}
+}
+
+@media (min-width: 991px)
+{
+    .container
+{
+
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+    margin-left: 500px;
+}
+.headline
+{
+    display: flex;
+    color: whitesmoke;
+    margin-top: 400px;
+}
+
+}

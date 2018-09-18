@@ -1,11 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import {fetchProtectedData} from '../actions/protected-data';
 import {retrieveDailyLogs, getDailyLogs, removeDay} from '../actions/dailyLogs';
 import Card from './card';
 
+import './dashboard.css';
 
 export class Dashboard extends React.Component {
     componentDidMount() {
@@ -27,6 +28,9 @@ getId(id) {
 
 
     render() {
+        if (this.props.loggedOut) {
+            return <Redirect to="/dashboard" />;
+        }
         const dailyLogs = this.props.meals && this.props.meals.map((day, index) => 
         <li className="card" key={index}>
             <Card handleClick={(id) => this.getId(id)} {...day} />
@@ -34,7 +38,9 @@ getId(id) {
         )
         return (
             <section className="dashboard-container">
+                <div className="dashboard-title">
                 <h1>Dashboard</h1>
+                </div>
                 <Link className="log-day-btn" to="/dailylogs">Log Meals</Link>
                 <ul className="meal-list">
                 {dailyLogs}
@@ -45,7 +51,8 @@ getId(id) {
 }
 
 const mapStateToProps = state => ({
-      meals: state.dailyLogsReducer.dailyLogs
+    meals: state.dailyLogsReducer.dailyLogs,
+      loggedOut: state.auth.currentUser === null
 });
 
 export default requiresLogin()(connect(mapStateToProps)(Dashboard));

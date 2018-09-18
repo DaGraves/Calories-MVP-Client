@@ -1,0 +1,22 @@
+
+.day-container
+{
+    background:linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.4)), url(../images/day.jpeg);
+    height: 100vh;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (max-width: 991px)
+{
+    .day-form 
+    {
+        margin-top: 75px;
+    }
+
+}

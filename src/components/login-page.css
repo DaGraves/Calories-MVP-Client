@@ -1,0 +1,29 @@
+
+.login-container
+{
+    background:linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.4)), url(../images/login.jpeg);
+    height: 100vh;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (max-width: 991px)
+{
+.login-title
+{
+    margin-top: 200px;
+}
+}
+
+@media (min-width: 991px)
+{
+.login-title
+{
+    margin-top: 300px;
+}
+}

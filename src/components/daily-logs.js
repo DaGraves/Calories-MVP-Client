@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 
 import DayForm from './day-form';
 
+import './daily-logs.css';
+
 
 export class DailyLogs extends React.Component {
     render() {
